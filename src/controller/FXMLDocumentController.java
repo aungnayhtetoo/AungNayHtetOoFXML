@@ -15,6 +15,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
@@ -53,7 +54,18 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private Button readStringStn;
+    
+    @FXML
+    private TextField searchField;
 
+    @FXML
+    private Button searchBtn;
+
+    @FXML
+    void searchByName(ActionEvent event) {
+        System.out.println("Search Button Clicked");
+    }
+    
     @FXML
     void createStudent(ActionEvent event) {
         Scanner input = new Scanner(System.in);
