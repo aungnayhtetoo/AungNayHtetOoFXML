@@ -10,9 +10,13 @@ import java.util.List;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 import java.util.Set;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
@@ -67,20 +71,50 @@ public class FXMLDocumentController implements Initializable {
     private TableView<Student> studentTable;
     
     @FXML
-    private TableColumn<Student, Integer> student_id;
+    private TableColumn<Student, Integer> studentId;
 
     @FXML
-    private TableColumn<Student, String> f_name;
+    private TableColumn<Student, String> fName;
 
     @FXML
-    private TableColumn<Student, String> l_name;
+    private TableColumn<Student, String> lName;
 
     @FXML
-    private TableColumn<Student, Double> gpa;
+    private TableColumn<Student, Float> gpa;
+    
+    // list that has the students that will be used to insert data into the table
+    private ObservableList<Student> studentInfo;
 
+    // adding the right data into the Student Table
+    // referenced from the sample code provided by Prof. Billah
+    public void setTableData(List<Student> stlist){
+        studentInfo = FXCollections.observableArrayList();
+        
+        stlist.forEach(student -> {
+            studentInfo.add(student);
+        });
+        System.out.println(studentInfo.toString());
+        studentTable.setItems(studentInfo);
+        studentTable.refresh();
+    }
+    
     @FXML
     void searchByName(ActionEvent event) {
-        System.out.println("Search Button Clicked");
+        //System.out.println("Search Button Clicked");
+        
+        String nameEntered = searchField.getText();
+        
+        List<Student> students = readByFname(nameEntered);
+        //System.out.println(students.toString());
+        if(students == null || students.isEmpty()){
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Error with Search Result");
+            alert.setHeaderText("Name not found");
+            alert.setContentText("No student found with such name");
+            alert.showAndWait();
+        } else{
+            setTableData(students);
+        }
     }
     
     @FXML
