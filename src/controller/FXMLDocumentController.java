@@ -159,10 +159,12 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     void showDetail(ActionEvent event) throws IOException {
         Student studentSelected = studentTable.getSelectionModel().getSelectedItem();
-        System.out.println(studentSelected.toString());
+        
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/DetailedModelView.fxml"));
         
+        
         try{
+            System.out.println(studentSelected.toString());
             Parent detailModelView = loader.load();
             Scene tableViewScene = new Scene(detailModelView);
 
@@ -172,29 +174,45 @@ public class FXMLDocumentController implements Initializable {
             Stage stage = new Stage();
             stage.setScene(tableViewScene);
             stage.show();
-        } catch(IOException e){
-            System.out.println(e);
+        } catch(NullPointerException  e){
+            //System.out.println(e);
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Error with Show Detail");
+            alert.setHeaderText("Student not selected");
+            alert.setContentText("Please selcted a student from the table");
+            alert.showAndWait();
         }
+        
     }
 
     @FXML
     void showDetailInPlace(ActionEvent event) throws IOException {
         Student studentSelected = studentTable.getSelectionModel().getSelectedItem();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/DetailedModelView.fxml"));
-        System.out.println(studentSelected.toString());
         
-        Parent detailModelView = loader.load();
-        Scene tableViewScene = new Scene(detailModelView);
         
-        DetailedModelViewController detailController = loader.getController();
-        detailController.initData(studentSelected);
+        try{        
+            System.out.println(studentSelected.toString());
+            Parent detailModelView = loader.load();
+            Scene tableViewScene = new Scene(detailModelView);
+
+            DetailedModelViewController detailController = loader.getController();
+            detailController.initData(studentSelected);
+
+            Scene currentScene = ((Node) event.getSource()).getScene();
+            detailController.setPreviousScene(currentScene);
+
+            Stage stage = (Stage) currentScene.getWindow();
+            stage.setScene(tableViewScene);
+            stage.show();
+        } catch(NullPointerException  e){
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Error with Show Detail");
+            alert.setHeaderText("Student not selected");
+            alert.setContentText("Please selcted a student from the table");
+            alert.showAndWait();
+        }
         
-        Scene currentScene = ((Node) event.getSource()).getScene();
-        detailController.setPreviousScene(currentScene);
-        
-        Stage stage = (Stage) currentScene.getWindow();
-        stage.setScene(tableViewScene);
-        stage.show();
     }
     
     @FXML
