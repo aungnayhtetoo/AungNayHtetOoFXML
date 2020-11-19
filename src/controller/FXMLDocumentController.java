@@ -134,6 +134,7 @@ public class FXMLDocumentController implements Initializable {
         }
     }
     
+    // method to return student that matches the search String in both first and last name
     public List<Student> readByFullName(String fName){
         Query query = manager.createNamedQuery("Student.findByFullName");
         
@@ -147,6 +148,16 @@ public class FXMLDocumentController implements Initializable {
         }
         
         return students;
+    }
+    
+    @FXML
+    void showDetail(ActionEvent event) {
+
+    }
+
+    @FXML
+    void showDetailInPlace(ActionEvent event) {
+
     }
     
     @FXML

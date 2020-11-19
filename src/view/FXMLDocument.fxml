@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="708.0" prefWidth="566.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="761.0" prefWidth="566.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLDocumentController">
     <children>
         <Button fx:id="button" layoutX="229.0" layoutY="241.0" onAction="#handleButtonAction" text="Click Me!" />
         <Label fx:id="label" layoutX="59.0" layoutY="241.0" minHeight="16" minWidth="69" prefHeight="25.0" prefWidth="158.0" />
@@ -58,7 +58,7 @@
          </children>
       </VBox>
       <Line endX="416.0" layoutX="140.0" layoutY="275.0" startX="-131.0" />
-      <VBox layoutX="10.0" layoutY="289.0" prefHeight="411.0" prefWidth="547.0">
+      <VBox layoutX="10.0" layoutY="289.0" prefHeight="448.0" prefWidth="547.0">
          <children>
             <AnchorPane prefHeight="50.0" prefWidth="547.0">
                <children>
@@ -89,6 +89,12 @@
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                      </columnResizePolicy>
                   </TableView>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="60.0" prefWidth="547.0">
+               <children>
+                  <Button fx:id="detailBtn" layoutX="414.0" layoutY="11.0" mnemonicParsing="false" onAction="#showDetail" prefHeight="25.0" prefWidth="110.0" text="Show Details" />
+                  <Button fx:id="detailBtn2" layoutX="210.0" layoutY="11.0" mnemonicParsing="false" onAction="#showDetailInPlace" prefHeight="25.0" prefWidth="187.0" text="Show Details In-Place" />
                </children>
             </AnchorPane>
          </children>
