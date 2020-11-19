@@ -15,6 +15,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
@@ -60,6 +62,21 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private Button searchBtn;
+    
+    @FXML
+    private TableView<Student> studentTable;
+    
+    @FXML
+    private TableColumn<Student, Integer> student_id;
+
+    @FXML
+    private TableColumn<Student, String> f_name;
+
+    @FXML
+    private TableColumn<Student, String> l_name;
+
+    @FXML
+    private TableColumn<Student, Double> gpa;
 
     @FXML
     void searchByName(ActionEvent event) {
