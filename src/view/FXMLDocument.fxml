@@ -74,10 +74,11 @@
                   <Label layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="84.0" text="By Name" />
                   <TextField fx:id="searchField" layoutX="98.0" layoutY="14.0" prefHeight="25.0" prefWidth="297.0" promptText="Enter Student Name" />
                   <Button fx:id="searchBtn" layoutX="422.0" layoutY="14.0" mnemonicParsing="false" onAction="#searchByName" prefHeight="25.0" prefWidth="110.0" text="Search" />
+                  <Button fx:id="searchBtn1" layoutX="422.0" layoutY="51.0" mnemonicParsing="false" onAction="#searchByAdvanceName" prefHeight="25.0" prefWidth="110.0" text="Advanced Search" />
                </children></AnchorPane>
-            <AnchorPane prefHeight="360.0" prefWidth="547.0">
+            <AnchorPane prefHeight="285.0" prefWidth="547.0">
                <children>
-                  <TableView fx:id="studentTable" blendMode="EXCLUSION" layoutX="14.0" layoutY="14.0" prefHeight="250.0" prefWidth="515.0">
+                  <TableView fx:id="studentTable" blendMode="EXCLUSION" layoutX="14.0" layoutY="3.0" prefHeight="261.0" prefWidth="515.0">
                     <columns>
                       <TableColumn fx:id="studentId" prefWidth="75.0" text="Student_ID" />
                       <TableColumn fx:id="fName" prefWidth="183.0" text="F_Name" />
@@ -88,7 +89,8 @@
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                      </columnResizePolicy>
                   </TableView>
-               </children></AnchorPane>
+               </children>
+            </AnchorPane>
          </children>
       </VBox>
     </children>

@@ -117,6 +117,37 @@ public class FXMLDocumentController implements Initializable {
             setTableData(students);
         }
     }
+       
+    @FXML
+    void searchByAdvanceName(ActionEvent event) {
+        String nameEntered = searchField.getText();
+        
+        List<Student> students = readByFullName(nameEntered);
+        if(students == null || students.isEmpty()){
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Error with Search Result");
+            alert.setHeaderText("Name not found");
+            alert.setContentText("No student found with such name");
+            alert.showAndWait();
+        } else{
+            setTableData(students);
+        }
+    }
+    
+    public List<Student> readByFullName(String fName){
+        Query query = manager.createNamedQuery("Student.findByFullName");
+        
+        // setting query paramater
+        query.setParameter("fName", fName);
+        
+        // perform the query
+        List<Student> students =  query.getResultList();
+        for (Student s: students){
+            System.out.println(s.getStudentId() + " " + s.getFName() + " " + s.getLName() + " " + s.getGpa());
+        }
+        
+        return students;
+    }
     
     @FXML
     void createStudent(ActionEvent event) {
