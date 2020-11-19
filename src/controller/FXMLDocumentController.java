@@ -181,6 +181,7 @@ public class FXMLDocumentController implements Initializable {
     void showDetailInPlace(ActionEvent event) throws IOException {
         Student studentSelected = studentTable.getSelectionModel().getSelectedItem();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/DetailedModelView.fxml"));
+        System.out.println(studentSelected.toString());
         
         Parent detailModelView = loader.load();
         Scene tableViewScene = new Scene(detailModelView);
