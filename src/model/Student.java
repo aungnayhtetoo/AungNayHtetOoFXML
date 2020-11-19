@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @NamedQueries({
     @NamedQuery(name = "Student.findAll", query = "SELECT s FROM Student s")
     , @NamedQuery(name = "Student.findByStudentId", query = "SELECT s FROM Student s WHERE s.studentId = :studentId")
-    , @NamedQuery(name = "Student.findByFName", query = "SELECT s FROM Student s WHERE s.fName = :fName")
+    , @NamedQuery(name = "Student.findByFName", query = "SELECT s FROM Student s WHERE LOWER(s.fName) = LOWER(:fName)")
     , @NamedQuery(name = "Student.findByLName", query = "SELECT s FROM Student s WHERE s.lName = :lName")
     , @NamedQuery(name = "Student.findByGpa", query = "SELECT s FROM Student s WHERE s.gpa = :gpa")})
 public class Student implements Serializable {

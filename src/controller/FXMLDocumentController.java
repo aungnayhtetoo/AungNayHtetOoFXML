@@ -19,9 +19,11 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
+import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
@@ -63,9 +65,6 @@ public class FXMLDocumentController implements Initializable {
     
     @FXML
     private TextField searchField;
-
-    @FXML
-    private Button searchBtn;
     
     @FXML
     private TableView<Student> studentTable;
@@ -93,10 +92,12 @@ public class FXMLDocumentController implements Initializable {
         stlist.forEach(student -> {
             studentInfo.add(student);
         });
-        System.out.println(studentInfo.toString());
+        //System.out.println(studentInfo.toString());
         studentTable.setItems(studentInfo);
         studentTable.refresh();
     }
+    
+   
     
     @FXML
     void searchByName(ActionEvent event) {
@@ -409,6 +410,15 @@ public class FXMLDocumentController implements Initializable {
         //database String
         String database = "JavaFXApplication1PU";
         manager = (EntityManager)Persistence.createEntityManagerFactory(database).createEntityManager();
+        
+        // tell what value goes at each table column
+        studentId.setCellValueFactory(new PropertyValueFactory<>("studentId"));
+        fName.setCellValueFactory(new PropertyValueFactory<>("fName"));
+        lName.setCellValueFactory(new PropertyValueFactory<>("lName"));
+        gpa.setCellValueFactory(new PropertyValueFactory<>("gpa"));
+        
+        studentTable.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+        
     }    
     
 }
