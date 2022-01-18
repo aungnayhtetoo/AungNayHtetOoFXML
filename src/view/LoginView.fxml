@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <BorderPane prefHeight="400.0" prefWidth="600.0">
+         <top>
+            <Pane prefHeight="159.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Text layoutX="122.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nutrio Login">
+                     <font>
+                        <Font size="64.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+         </top>
+         <left>
+            <Pane prefHeight="217.0" prefWidth="150.0" BorderPane.alignment="CENTER" />
+         </left>
+         <center>
+            <Pane prefHeight="128.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox prefHeight="135.0" prefWidth="299.0">
+                     <children>
+                        <FlowPane hgap="20.0" prefHeight="160.0" prefWidth="299.0" vgap="20.0">
+                           <children>
+                              <AnchorPane prefHeight="72.0" prefWidth="299.0">
+                                 <children>
+                                    <Label layoutY="9.0" text="Username:" />
+                                    <TextField layoutX="65.0" layoutY="5.0" prefHeight="25.0" prefWidth="220.0" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </FlowPane>
+                        <FlowPane hgap="20.0" prefHeight="200.0" prefWidth="299.0">
+                           <children>
+                              <AnchorPane prefHeight="79.0" prefWidth="300.0">
+                                 <children>
+                                    <Label layoutY="9.0" text="Password:" />
+                                    <TextField layoutX="66.0" layoutY="5.0" prefHeight="25.0" prefWidth="220.0" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </FlowPane>
+                     </children>
+                  </VBox>
+               </children>
+            </Pane>
+         </center>
+         <right>
+            <Pane prefHeight="217.0" prefWidth="150.0" BorderPane.alignment="CENTER" />
+         </right>
+         <bottom>
+            <Pane prefHeight="96.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button layoutX="333.0" layoutY="19.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="105.0" text="Login" />
+               </children>
+            </Pane>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>

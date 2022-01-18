@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="490.0" prefWidth="675.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FoodViewController">
+   <children>
+      <BorderPane prefHeight="490.0" prefWidth="675.0">
+         <bottom>
+            <Pane prefHeight="78.0" prefWidth="584.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="backBtn" layoutX="25.0" layoutY="25.0" mnemonicParsing="false" onAction="#goBackScene" prefHeight="30.0" prefWidth="105.0" text="Back" />
+               </children>
+            </Pane>
+         </bottom>
+         <center>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="235.0" prefWidth="584.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ScrollPane prefHeight="240.0" prefWidth="586.0">
+                     <content>
+                        <AnchorPane prefHeight="241.0" prefWidth="569.0">
+                           <children>
+                              <ImageView fx:id="foodImage" fitHeight="187.0" fitWidth="216.0" layoutX="14.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: #1e90ff;" />
+                              <TextFlow fx:id="textFlow" layoutX="245.0" layoutY="21.0" prefHeight="322.0" prefWidth="317.0" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                  </ScrollPane>
+               </children>
+            </AnchorPane>
+         </center>
+         <top>
+            <VBox prefHeight="150.0" prefWidth="675.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox prefHeight="150.0" prefWidth="675.0">
+                     <children>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: #303030;">
+                           <children>
+                              <Line endX="133.0" layoutX="142.0" layoutY="36.0" startX="85.0" strokeWidth="4.0" />
+                              <Line endX="133.0" layoutX="329.0" layoutY="36.0" startX="85.0" strokeWidth="4.0" />
+                              <Line endX="133.0" layoutX="236.0" layoutY="36.0" startX="85.0" strokeWidth="4.0" />
+                              <Circle fx:id="icon2" fill="#e8e8e8" layoutX="298.0" layoutY="36.0" radius="22.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                              <Circle fx:id="icon3" fill="#e8e8e8" layoutX="392.0" layoutY="36.0" radius="22.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                              <Circle fx:id="icon1" fill="#979797" layoutX="205.0" layoutY="36.0" radius="22.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                              <Circle fx:id="icon4" fill="#e8e8e8" layoutX="485.0" layoutY="36.0" radius="22.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                              <Button fx:id="locationHeader3" layoutX="345.0" layoutY="57.0" mnemonicParsing="false" onAction="#goBackScene" prefHeight="10.0" prefWidth="95.0" style="-fx-background-color: Transparent;" text="nth" textFill="WHITE">
+                                 <font>
+                                    <Font name="Roboto Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="locationHeader2" layoutX="250.0" layoutY="57.0" mnemonicParsing="false" onAction="#goNutrientSelection" prefHeight="10.0" prefWidth="95.0" style="-fx-background-color: Transparent;" text="nth" textFill="WHITE">
+                                 <font>
+                                    <Font name="Roboto Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="locationHeader1" layoutX="158.0" layoutY="57.0" mnemonicParsing="false" onAction="#goHome" prefHeight="10.0" prefWidth="95.0" style="-fx-background-color: Transparent;" text="Nutrient List" textFill="WHITE">
+                                 <font>
+                                    <Font name="Roboto Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="locationHeader4" layoutX="438.0" layoutY="57.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="95.0" style="-fx-background-color: Transparent;" text="nth" textFill="WHITE">
+                                 <font>
+                                    <Font name="Roboto Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: #303030;">
+                           <children>
+                              <Label fx:id="foodTitle" layoutX="45.0" layoutY="12.0" prefHeight="45.0" prefWidth="583.0" text="Food Item" textFill="WHITE">
+                                 <font>
+                                    <Font name="Roboto Bold Italic" size="30.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="info" layoutX="45.0" layoutY="50.0" prefHeight="18.0" prefWidth="577.0" text="Instruction for User goes here" textFill="WHITE">
+                                 <font>
+                                    <Font name="Roboto Medium" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="AungNayHtetOoFXMLPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>model.Recipe</class>
+    <class>model.Userlogin</class>
+    <class>model.Food</class>
+    <class>model.Recipeinformation</class>
+    <class>model.Foodinformation</class>
+    <class>model.Meal</class>
+    <class>model.Nutrientinformation</class>
+    <class>model.Nutrient</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/gb10_db;create=true"/>
+      <property name="javax.persistence.jdbc.user" value="APP"/>
+      <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
+      <property name="javax.persistence.jdbc.password" value="APP"/>
+    </properties>
+  </persistence-unit>
+</persistence>
